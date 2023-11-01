@@ -6,13 +6,11 @@
             font-family: 'Montserrat';
         }
         
-        html {
+        body {
             scroll-behavior: smooth;
+
         }
 
-        :root{
-            scroll-behavior: smooth;
-        }
         /* *********************/
         /* seccion I N I C I O */
         /* *********************/
