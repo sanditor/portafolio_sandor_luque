@@ -704,14 +704,18 @@
             #inicio .contenido .presentacion h2 {
                 font-size: 40px;
             }
+            #inicio .contenido .presentacion .descripcion {
+                font-size: 15px;
+            }
             /* seccion SOBRE MI */
             #sobremi {
                 padding: 50px 0;
                 display: block;
             }
             #sobremi .contenedor-foto {
-                max-width: 200px;
+                max-width: 350px;
                 margin: auto;
+                overflow-x: hidden;
             }
             #sobremi .contenedor-foto img {
                 padding: 8px;
@@ -728,7 +732,7 @@
                 padding: 50px 15px;
             }
             #servicios .fila {
-                display: block;
+                display: block;                
             }
             #servicios .fila .servicio {
                 margin: 10px auto;
@@ -743,6 +747,7 @@
             }
             #portfolio .fila {
                 display: block;
+                padding: 0 1rem;
             }
             #portfolio .fila .proyecto {
                 margin: 10px auto;
