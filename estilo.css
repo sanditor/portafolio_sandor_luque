@@ -653,6 +653,12 @@
             background-color: #ff5080;
             color: #fff;
         }
+
+        form#formContac p {
+            margin-top: 1rem;
+            color: red;
+            font-weight: 600;
+        }
         /* *********************/
         /* seccion F O O T E R */
         /* *********************/
