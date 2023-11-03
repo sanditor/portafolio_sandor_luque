@@ -551,7 +551,7 @@
             -moz-transform: translate(100%);
             -ms-transform: translate(100%);
             -o-transform: translate(100%);
-}
+        }
 
         .agregar-imagen{
             width: 60%;
@@ -562,7 +562,7 @@
             -moz-transition: transform .3s .2s;
             -ms-transition: transform .3s .2s;
             -o-transition: transform .3s .2s;
-}
+        }
 
         .showImage{
             transform: scale(1);
@@ -570,7 +570,7 @@
             -moz-transform: scale(1);
             -ms-transform: scale(1);
             -o-transform: scale(1);
-}
+        }
 
         .show{
             transform: translate(0);
@@ -578,7 +578,7 @@
             -moz-transform: translate(0);
             -ms-transform: translate(0);
             -o-transform: translate(0);
-}
+        }
 
         .close{
             position: absolute;
@@ -586,6 +586,15 @@
             right: 15px;
             width: 40px;
             cursor: pointer;
+            transition: all ease-in-out 0.5;
+            -webkit-transition: all ease-in-out 0.5;
+            -moz-transition: all ease-in-out 0.5;
+            -ms-transition: all ease-in-out 0.5;
+            -o-transition: all ease-in-out 0.5;
+        }
+
+        .close:hover {
+            opacity: 0.4;
         }
 
         /* *********************/
@@ -659,7 +668,7 @@
             font-weight: 600;         
         }
 
-        .hidden {
+        .hiddenMessage {
             display: none;
             opacity: 0;
             transition: ease-in-out opacity 1s;
@@ -667,9 +676,9 @@
             -moz-transition: ease-in-out opacity 1s;
             -ms-transition: ease-in-out opacity 1s;
             -o-transition: ease-in-out opacity 1s;
-}
+        }
 
-        .show {
+        .showMessage {
             display: block;
             opacity: 1;
             transition: ease-in-out opacity 1s;
@@ -677,18 +686,6 @@
             -moz-transition: ease-in-out opacity 1s;
             -ms-transition: ease-in-out opacity 1s;
             -o-transition: ease-in-out opacity 1s;
-}
-
-        @keyframes fadeOut {
-            0% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.5;
-            }
-            100% {
-                opacity: 0;
-            }
         }
 
         /* *********************/

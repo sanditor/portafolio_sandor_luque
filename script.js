@@ -49,6 +49,7 @@ const imagenes = document.querySelectorAll('.img-galeria')
 const imagenLight = document.querySelector('.agregar-imagen');
 const contenedorLight = document.querySelector('.imagen-light')
 const closeLight = document.querySelector('.close')
+const hiddenMenuStyle = document.querySelector('.contenido header')
 
 
 imagenes.forEach(imagen => {
@@ -60,8 +61,12 @@ imagenes.forEach(imagen => {
 contenedorLight.addEventListener('click',(e)=>{
     if(e.target !== imagenLight){
         contenedorLight.classList.toggle('show')
-        imagenLight.classList.toggle('showImage')
+        imagenLight.classList.toggle('showImage')       
     }
+})
+
+closeLight.addEventListener('click', (e) => {
+     hiddenMenuStyle.style.zIndex = "100"
 })
 
 
@@ -69,7 +74,10 @@ const aparecerImagen = (imagen)=>{
     imagenLight.src = imagen;
     contenedorLight.classList.toggle('show')
     imagenLight.classList.toggle('showImage')
+    hiddenMenuStyle.style.zIndex = "0" 
 }
+
+
 
 window.addEventListener('load', function() {
 //lógica para envío de formularios
@@ -89,30 +97,35 @@ async function handleSubmit(event) {
     if (response.ok) {
         status.innerHTML = "Gracias por tu mensaje, ha sido enviado con éxito! Pronto te responderemos!";
         status.style.color = "#35d191"
-        setTimeout(function() {
-            if (status.classList.contains("hidden")) {
-                status.classList.remove("hidden")
-                status.classList.add("show")
-                setTimeout(function () {
-                  status.classList.remove("show")
-                  status.classList.add("hidden")  
-                }, 2000)
-            }else{
-                status.classList.remove("show")
-                status.classList.add("hidden")
-            }            
-        }, 5000);
+        
+        if (status.classList.contains("hiddenMessage")) {
+            console.log("entró1")
+            status.classList.remove("hiddenMessage")
+            status.classList.add("showMessage")
+            setTimeout(function () {
+                console.log("entró2")
+                status.classList.remove("showMessage")
+                status.classList.add("hiddenMessage")  
+            }, 2000)
+        }else{
+            setTimeout(function() {
+                console.log("entró3")
+                status.classList.remove("showMessage")
+                status.classList.add("hiddenMessage")
+            }, 5000);
+        }            
+        
         form.reset()
     } else {
         response.json().then(data => {
         if (Object.hasOwn(data, 'errors')) {
             status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
             status.style.color = "red"
-            status.classList.toggle("hidden");
+            status.classList.toggle("hiddenMessage");
         } else {
             status.innerHTML = "Oops! Hay problema al enviar tu formulario"
             status.style.color = "red"
-            status.classList.toggle("hidden");
+            status.classList.toggle("hiddenMessage");
         }
         })
     }
@@ -122,4 +135,4 @@ async function handleSubmit(event) {
 }
 form.addEventListener("submit", handleSubmit)
 
-}, false)
+}, false) 
