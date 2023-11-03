@@ -655,10 +655,42 @@
         }
 
         form#formContac p {
-            margin-top: 1rem;
-            color: red;
-            font-weight: 600;
+            margin-top: 1rem;            
+            font-weight: 600;         
         }
+
+        .hidden {
+            display: none;
+            opacity: 0;
+            transition: ease-in-out opacity 1s;
+            -webkit-transition: ease-in-out opacity 1s;
+            -moz-transition: ease-in-out opacity 1s;
+            -ms-transition: ease-in-out opacity 1s;
+            -o-transition: ease-in-out opacity 1s;
+}
+
+        .show {
+            display: block;
+            opacity: 1;
+            transition: ease-in-out opacity 1s;
+            -webkit-transition: ease-in-out opacity 1s;
+            -moz-transition: ease-in-out opacity 1s;
+            -ms-transition: ease-in-out opacity 1s;
+            -o-transition: ease-in-out opacity 1s;
+}
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
         /* *********************/
         /* seccion F O O T E R */
         /* *********************/

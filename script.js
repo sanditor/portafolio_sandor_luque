@@ -71,6 +71,7 @@ const aparecerImagen = (imagen)=>{
     imagenLight.classList.toggle('showImage')
 }
 
+window.addEventListener('load', function() {
 //lógica para envío de formularios
 var form = document.getElementById("formContac");
     
@@ -87,13 +88,31 @@ async function handleSubmit(event) {
     }).then(response => {
     if (response.ok) {
         status.innerHTML = "Gracias por tu mensaje, ha sido enviado con éxito! Pronto te responderemos!";
+        status.style.color = "#35d191"
+        setTimeout(function() {
+            if (status.classList.contains("hidden")) {
+                status.classList.remove("hidden")
+                status.classList.add("show")
+                setTimeout(function () {
+                  status.classList.remove("show")
+                  status.classList.add("hidden")  
+                }, 2000)
+            }else{
+                status.classList.remove("show")
+                status.classList.add("hidden")
+            }            
+        }, 5000);
         form.reset()
     } else {
         response.json().then(data => {
         if (Object.hasOwn(data, 'errors')) {
             status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+            status.style.color = "red"
+            status.classList.toggle("hidden");
         } else {
             status.innerHTML = "Oops! Hay problema al enviar tu formulario"
+            status.style.color = "red"
+            status.classList.toggle("hidden");
         }
         })
     }
@@ -102,3 +121,5 @@ async function handleSubmit(event) {
     });
 }
 form.addEventListener("submit", handleSubmit)
+
+}, false)
