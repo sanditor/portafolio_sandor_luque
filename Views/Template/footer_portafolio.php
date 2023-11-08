@@ -10,7 +10,7 @@
 </footer>
 <script>
     const base_url = "<?= base_url(); ?>";
-    const media_url = "<?= media(); ?>"
+    const media_url = "<?= media(); ?>"   
 </script>
 <script src="<?= media(); ?>/js/jquery-3.3.1.min.js"></script>
 <!--Código custom JS para alertify -->

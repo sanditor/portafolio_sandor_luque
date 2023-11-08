@@ -9,9 +9,9 @@
 
 	//Datos de conexión a Base de Datos
 	const DB_HOST = "localhost";
-	const DB_NAME = "u378219037_db_portafolio";
-	const DB_USER = "u378219037_root2";
-	const DB_PASSWORD = "Elshalom7&";
+	const DB_NAME = "db_portafolio";
+	const DB_USER = "root";
+	const DB_PASSWORD = "";
 	const DB_PORT = "3306";
 	const DB_CHARSET = "utf8";
 

@@ -66,7 +66,7 @@
                                 <li><a href="<?= base_url() ?>/logout" onclick="seleccionar(this)"">
                                     SALIR
                                 </a></li>
-                                <li><a href="<?= base_url() ?>/logIN" onclick="seleccionar(this)"">
+                                <li><a href="<?= base_url() ?>/login" onclick="seleccionar(this)"">
                                     CUENTA
                                 </a></li>
                             <?php } else { ?>
