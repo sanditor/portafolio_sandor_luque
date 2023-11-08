@@ -78,8 +78,7 @@ const aparecerImagen = (imagen)=>{
 }
 
 
-
-window.addEventListener('load', function() {
+/* window.addEventListener('load', function() {
 //lógica para envío de formularios
 var form = document.getElementById("formContac");
     
@@ -135,4 +134,62 @@ async function handleSubmit(event) {
 }
 form.addEventListener("submit", handleSubmit)
 
-}, false) 
+}, false);  */
+
+//Guardar Contacto
+if(document.querySelector("#frmContacto")){
+	let frmContacto = document.querySelector("#frmContacto");
+	frmContacto.addEventListener('submit',function(e) { 
+		e.preventDefault();
+
+		let nombre = document.querySelector("#txtNombreContacto").value;
+        let email = document.querySelector("#txtEmailContacto").value;
+        let tema = document.querySelector("#txtTemaContacto").value;		
+		let mensaje = document.querySelector("#txtMensajeContacto").value;
+
+		if(nombre == ""){
+			alertify.error("El nombre es obligatorio");
+			return false;
+		}
+
+		if(!fntEmailValidate(email)){
+            alertify.error("El email no es válido.");
+			return false;
+		}
+
+        if(tema == ""){
+            alertify.error("Por favor escribe el tema.");
+			return false;
+		}
+
+		if(mensaje == ""){
+            alertify.error("Por favor escribe el mensaje.");
+			return false;
+		}	
+		
+		divLoading.style.display = "flex";
+		let request = (window.XMLHttpRequest) ? 
+                    new XMLHttpRequest() : 
+                    new ActiveXObject('Microsoft.XMLHTTP');
+		let ajaxUrl = base_url+'/Portafolio/setContacto';
+		let formData = new FormData(frmContacto);
+	   	request.open("POST",ajaxUrl,true);
+	    request.send(formData);
+	    request.onreadystatechange = function(){
+	    	if(request.readyState != 4) return;
+	    	if(request.status == 200){
+	    		let objData = JSON.parse(request.responseText);
+	    		if(objData.status){
+                    alertify.success(objData.msg);
+                	document.querySelector("#frmContacto").reset();
+	    		}else{
+                    alertify.error(objData.msg);
+	    		}
+	    	}
+	    	divLoading.style.display = "none";
+        	return false;
+		}
+
+	},false);
+}
+
