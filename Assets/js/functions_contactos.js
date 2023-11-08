@@ -7,7 +7,7 @@ tableMensaje = $('#tableMensaje').dataTable( {
         "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
     },
     "ajax":{
-        "url": " "+base_url+"/contactos/getMensajes",
+        "url": " "+base_url+"/Contactos/getMensajes",
         "dataSrc":""
     },
     "columns":[
@@ -53,7 +53,7 @@ function fntViewInfo(idmensaje){
     let request = (window.XMLHttpRequest) ? 
                     new XMLHttpRequest() : 
                     new ActiveXObject('Microsoft.XMLHTTP');
-    let ajaxUrl = base_url+'/contactos/getMensaje/'+idmensaje;
+    let ajaxUrl = base_url+'/Contactos/getMensaje/'+idmensaje;
     request.open("GET",ajaxUrl,true);
     request.send();
     request.onreadystatechange = function(){
@@ -91,7 +91,7 @@ function fntDelMensaje(idMensaje) {
 
         if (isConfirm) {
             let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-            let ajaxUrl = base_url + '/contactos/delMensaje';
+            let ajaxUrl = base_url + '/Contactos/delMensaje';
             let strData = "idMensaje=" + idMensaje;
             request.open("POST", ajaxUrl, true);
             request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");

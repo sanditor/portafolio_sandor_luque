@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     require_once("Models/PContactoModel.php");
 
     class Portafolio extends Controllers{

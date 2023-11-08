@@ -171,7 +171,7 @@ if(document.querySelector("#frmContacto")){
 		let request = (window.XMLHttpRequest) ? 
                     new XMLHttpRequest() : 
                     new ActiveXObject('Microsoft.XMLHTTP');
-		let ajaxUrl = base_url+'/portafolio/setContacto';
+		let ajaxUrl = base_url+'/Portafolio/setContacto';
 		let formData = new FormData(frmContacto);
 	   	request.open("POST",ajaxUrl,true);
 	    request.send(formData);
