@@ -1,19 +1,32 @@
 <?php 
 	
 	require_once('Helpers/Helpers.php');
-	
-	define("BASE_URL",urlAbsoluta());	
+
+	$arrayReturnUrl = urlAbsoluta();
+	define("BASE_URL", $arrayReturnUrl['BASE_URL']);
+	define("PROTOCOL", $arrayReturnUrl['PROTOCOL']);	
 
 	//Zona horaria
 	date_default_timezone_set("America/Bogota");
 
-	//Datos de conexión a Base de Datos
-	const DB_HOST = "localhost";
-	const DB_NAME = "db_portafolio";
-	const DB_USER = "root";
-	const DB_PASSWORD = "";
-	const DB_PORT = "3306";
-	const DB_CHARSET = "utf8";
+	if (PROTOCOL == "http") {
+		//Datos de conexión a Base de Datos Local
+		define("DB_HOST", 'localhost');
+		define("DB_NAME", 'db_portafolio');
+		define("DB_USER", 'root');
+		define("DB_PASSWORD", '');
+		define("DB_PORT", '3306');
+		define("DB_CHARSET", 'utf8');
+	}else if(PROTOCOL == "https"){
+		//Datos de conexión a Base de Datos Producción
+		define("DB_HOST", 'localhost');
+		define("DB_NAME", 'u378219037_db_portafolio');
+		define("DB_USER", 'u378219037_root2');
+		define("DB_PASSWORD", 'Elshalom7&');
+		define("DB_PORT", '3306');
+		define("DB_CHARSET", 'utf8');
+	}
+	
 
 	//Datos Empresa
 	const DIRECCION = "Calle 167 # 58B-96. Casa: 12";

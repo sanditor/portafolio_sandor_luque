@@ -180,7 +180,8 @@
     $domain = $_SERVER['SERVER_NAME'];
     $BASE_URL = dirname("$protocol://{$domain}{$disp_port}{$base_url}");
 
-    return $BASE_URL;
+    return array("BASE_URL" => $BASE_URL, "PROTOCOL" => $protocol);
+    
     }
     
 
