@@ -142,30 +142,47 @@ if(document.querySelector("#frmContacto")){
 	frmContacto.addEventListener('submit',function(e) { 
 		e.preventDefault();
 
-		let nombre = document.querySelector("#txtNombreContacto").value;
-        let email = document.querySelector("#txtEmailContacto").value;
-        let tema = document.querySelector("#txtTemaContacto").value;		
-		let mensaje = document.querySelector("#txtMensajeContacto").value;
+		let nombre = document.querySelector("#txtNombreContacto");
+        let nombreValue = document.querySelector("#txtNombreContacto").value.trim();
+        let email = document.querySelector("#txtEmailContacto");
+        let emailValue = document.querySelector("#txtEmailContacto").value.trim();
+        let tema = document.querySelector("#txtTemaContacto");
+        let temaValue = document.querySelector("#txtTemaContacto").value.trim();
+        let mensaje = document.querySelector("#txtMensajeContacto");
+		let mensajeValue = document.querySelector("#txtMensajeContacto").value.trim();
+        // Guardar el formulario en su estado original
+        var formularioOriginal = document.getElementById("frmContacto").outerHTML;
 
-		if(nombre == ""){
-			alertify.error("El nombre es obligatorio");
+		if(nombreValue == ""){
+			setErrorFor(nombre,"El nombre es obligatorio");            
 			return false;
-		}
+		}else {
+		    setSuccessFor(nombre, "correcto");
+	    }	
 
-		if(!fntEmailValidate(email)){
-            alertify.error("El email no es válido.");
+		if(emailValue === ''){
+            setErrorFor(email, 'No puede dejar el email en blanco.');
+            return false;
+        }else if (!fntEmailValidate(emailValue)) {
+            setErrorFor(email,"El email no es válido.");
 			return false;
-		}
+		}else{
+		    setSuccessFor(email, "correcto");
+	    }
 
-        if(tema == ""){
-            alertify.error("Por favor escribe el tema.");
+        if(temaValue == ""){
+           setErrorFor(tema,"Por favor escribe el tema.");
 			return false;
-		}
+		}else {
+		    setSuccessFor(tema, "correcto");
+	    }
 
-		if(mensaje == ""){
-            alertify.error("Por favor escribe el mensaje.");
+		if(mensajeValue == ""){
+            setErrorFor(mensaje, "Por favor escribe el mensaje.");
 			return false;
-		}	
+		}else {
+		    setSuccessFor(mensaje, "correcto");
+	    }
 		
 		divLoading.style.display = "flex";
 		let request = (window.XMLHttpRequest) ? 
@@ -182,6 +199,8 @@ if(document.querySelector("#frmContacto")){
 	    		if(objData.status){
                     alertify.success(objData.msg);
                 	document.querySelector("#frmContacto").reset();
+                    document.getElementById("frmContacto").outerHTML = formularioOriginal;
+                    document.querySelector("#txtNombreContacto").focus();
 	    		}else{
                     alertify.error(objData.msg);
 	    		}
@@ -191,5 +210,25 @@ if(document.querySelector("#frmContacto")){
 		}
 
 	},false);
+}
+
+function setErrorFor(input, message) {    
+	const formControl = input.parentElement;
+	const small = formControl.querySelector('.form-control small');
+    input.style.border = "1px solid #e74c3c !important";
+    input.focus();
+	formControl.className = 'form-control error fila';
+    small.style.color = '#e74c3c'
+    small.style.visibility = "visible";    
+	small.innerText = message;
+
+}
+
+function setSuccessFor(input, message) {
+	const formControl = input.parentElement;
+    const small = formControl.querySelector('.form-control small');
+	formControl.className = 'form-control success';
+    small.style.color = '#2ecc71',
+    small.innerText = message;
 }
 

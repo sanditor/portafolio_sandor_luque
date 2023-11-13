@@ -315,23 +315,48 @@
 
 <!-- SECCTION C O N T A C T O -->
 <section id="contacto">
-    <h3 class="titulo-seccion">Contactame ahora</h3>
     <div class="contenedor-form">
+        <h3 class="titulo-seccion">Contactame ahora</h3>
         <form id="frmContacto" action="" method="POST">
-            <div class="fila mitad">
-                <input type="text" id="txtNombreContacto" name="txtNombreContacto" placeholder="Nombre Completo *" class="input-mitad">
-                <input type="email" id="txtEmailContacto" name="txtEmailContacto" placeholder="Dirección de Email" class="input-mitad">
+            <div class="form-control fila">
+                <input type="text" id="txtNombreContacto" name="txtNombreContacto" placeholder="Nombre Completo *" class="input-full">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
             </div>
-            <div class="fila">
+            <div class="form-control fila">
+                <input type="email" id="txtEmailContacto" name="txtEmailContacto" placeholder="Dirección de Email" class="input-full">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control fila">
                 <input type="text" id="txtTemaContacto" name="txtTemaContacto" placeholder="Tema..." class="input-full">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
             </div>
-            <div class="fila">
+            <div class="form-control fila">
                 <textarea id="txtMensajeContacto" name="txtMensajeContacto" cols="30" rows="10" placeholder="Tu Mensaje..." class="input-full"></textarea>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
             </div>
 
             <input type="submit" value="Enviar Mensaje" class="btn-enviar">
-            <p id="formStatus"></p>
         </form>
+    </div>
+    <div class="contacto-info">
+        <h4>Más Información</h4>
+        <ul>
+            <li><i class="fas fa-map-marker-alt"></i> Calle 167 # 58B-96, casa 12</li>
+            <li><i class="fas fa-phone"></i> +57 312 4769266</li>
+            <li><i class="fas fa-envelope-open-text"></i> contacto@sandorluqueweb.com</li>
+        </ul>
+        <p>No te preocupes cotiza que nosotros te lo programamos a nivel web y desarrollo a medida<br><br>
+          <b>portafolio.sandorluqueweb.com</b>
+        </p>
+      
     </div>
 </section>
 

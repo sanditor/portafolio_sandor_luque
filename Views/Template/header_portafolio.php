@@ -9,16 +9,8 @@
     <meta name="author" content="Sandor Luque">
     <meta name="theme-color" content="#009688">
     <title><?=$data['page_title']?></title>
-    <link rel="icon" type="image/svg+xml" href="<?= media() ?>/portafolio/img/favicon.svg" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="<?= media() ?>/portafolio/css/estilos.css">
-    <!--Archivos CSS para Alertify -->
-	<!-- Alertify style -->
-	<link href="<?= media()?>/portafolio/css/alertify/alertify.min.css" rel="stylesheet">
-	<!-- Alertify theme -->
-	<link href="<?=  media() ?>/portafolio/css/alertify/themes/default.min.css" rel="stylesheet">
 
-    <!-- Primary Meta Tags -->
+     <!-- Primary Meta Tags -->
     <meta name="title" content="SLF Desarrollador Web Full stack" />
     <meta name="description" content="Desarrollo web a medida. Consulte..." />
 
@@ -36,6 +28,14 @@
     <meta property="twitter:description" content="Desarrollo web a medida. Consulte..." />
     <meta property="twitter:image" content="<?= media() ?>/portafolio/img/logo.png" />
 
+    <link rel="icon" type="image/svg+xml" href="<?= media() ?>/portafolio/img/favicon.svg" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="<?= media() ?>/portafolio/css/estilos.css">
+    <!--Archivos CSS para Alertify -->
+	<link href="<?= media()?>/portafolio/css/alertify/alertify.min.css" rel="stylesheet">
+	<!-- Alertify theme -->
+	<link href="<?=  media() ?>/portafolio/css/alertify/themes/default.min.css" rel="stylesheet">
+    
 </head>
 
 <body>

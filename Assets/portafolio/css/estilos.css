@@ -612,17 +612,22 @@ body {
 /* *********************/
 
 #contacto {
-    padding: 100px 15px;
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 27px;
     background-color: #f3f3f3;
+    gap: 40px;
+    box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3);
 }
 
-#contacto .titulo-seccion {
-    margin-bottom: 20px;
+.contact-wrapper {
+    box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3);
 }
 
 #contacto .contenedor-form {
-    max-width: 1100px;
-    margin: auto;
+    max-width: 900px;
+    margin: 0px 20px 0px 20px;
+    width: 100%;
 }
 
 #contacto .contenedor-form .fila {
@@ -634,16 +639,8 @@ body {
     justify-content: space-between;
 }
 
-#contacto .contenedor-form input,
-#contacto .contenedor-form textarea {
-    padding: 20px;
-    border-radius: 20px;
-    border: none;
-    border: 1px solid #919191;
-}
-
 #contacto .contenedor-form .mitad input {
-    width: 48%;
+    width: 50%;
 }
 
 #contacto .contenedor-form .input-full {
@@ -658,6 +655,7 @@ body {
     text-decoration: underline;
     text-decoration-color: #d3d3d3;
     text-decoration-thickness: 5px;
+    margin-bottom: 25px;
 }
 
 #contacto .btn-enviar {
@@ -673,29 +671,76 @@ body {
     color: #fff;
 }
 
-form#formContac p {
-    margin-top: 1rem;            
-    font-weight: 600;         
+#contacto .contenedor-form input,
+#contacto .contenedor-form textarea {
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid #919191;
+    margin-bottom: 15px;
 }
 
-.hiddenMessage {
-    display: none;
-    opacity: 0;
-    transition: ease-in-out opacity 1s;
-    -webkit-transition: ease-in-out opacity 1s;
-    -moz-transition: ease-in-out opacity 1s;
-    -ms-transition: ease-in-out opacity 1s;
-    -o-transition: ease-in-out opacity 1s;
+.contacto-info {
+    display: flex;
+    flex-direction: column;
+    background: #dfd6d6;
+    max-width: 500px;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;    
 }
 
-.showMessage {
-    display: block;
-    opacity: 1;
-    transition: ease-in-out opacity 1s;
-    -webkit-transition: ease-in-out opacity 1s;
-    -moz-transition: ease-in-out opacity 1s;
-    -ms-transition: ease-in-out opacity 1s;
-    -o-transition: ease-in-out opacity 1s;
+.contacto-info ul>li {
+    list-style: none; 
+    line-height: 2.5;
+}
+
+.contacto-info h4 {
+    margin-bottom: 25px;
+}
+
+.contacto-info p {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.form-control input:focus {
+	border-color: #777;
+}
+
+.form-control.success input {
+	border-color: #2ecc71 !important;
+}
+
+.form-control.error input {
+	border-color: #e74c3c !important;
+}
+
+.form-control i {
+	visibility: hidden;
+}
+
+.form-control.success i.fa-check-circle {
+	color: #2ecc71 !important;
+	visibility: visible !important;
+    margin-bottom: 15px !important;
+}
+
+.form-control.error i.fa-exclamation-circle {
+	color: #e74c3c !important;
+	visibility: visible !important;
+    margin-left: -15px;
+}
+
+.form-control small {
+	color: #e74c3c;
+	left: 0;
+	visibility: hidden;
+}
+
+.form-control.error small {
+	visibility: visible !important;
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
 }
 
 /* *********************/
@@ -768,6 +813,7 @@ footer a {
     }
     #inicio .contenido .presentacion .descripcion {
         font-size: 15px;
+        padding: 0 15px
     }
     /* seccion SOBRE MI */
     #sobremi {
@@ -816,7 +862,9 @@ footer a {
     }
     /* seccion CONTACTO */
     #contacto {
-        padding: 50px 15px;
+        flex-direction: column;
+        padding: 30px 63px;
+        width: auto;
     }
     #contacto .contenedor-form .mitad {
         margin-bottom: 15px;
@@ -825,5 +873,20 @@ footer a {
     #contacto .contenedor-form .mitad input {
         width: 100%;
         margin-bottom: 15px;
+    }
+    .contacto-info {
+        max-width: max-content;        
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .contacto-info {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #inicio .contenido .presentacion {
+        height: 110vh;
     }
 }
