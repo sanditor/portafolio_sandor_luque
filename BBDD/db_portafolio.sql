@@ -18,7 +18,9 @@
 -- Volcando estructura de base de datos para db_portafolio
 #DROP DATABASE IF EXISTS `u378219037_db_portafolio`;
 #CREATE DATABASE IF NOT EXISTS `u378219037_db_portafolio` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `u378219037_db_portafolio`;
+DROP DATABASE IF EXISTS `db_portafolio`;
+CREATE DATABASE IF NOT EXISTS `db_portafolio`
+USE `db_portafolio`;
 
 -- Volcando estructura para tabla db_portafolio.contacto
 CREATE TABLE IF NOT EXISTS `contacto` (
@@ -33,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `contacto` (
   `status` int NOT NULL DEFAULT '1',
   `datecreated` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 -- Volcando datos para la tabla db_portafolio.contacto: ~0 rows (aproximadamente)
 DELETE FROM `contacto`;
