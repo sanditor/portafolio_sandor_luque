@@ -40,11 +40,11 @@ function fntValidText(){
     validText.forEach(function(validText) {
         validText.addEventListener('keyup', function(){
 			let inputValue = this.value;
-			if(!testText(inputValue)){
-				this.classList.add('is-invalid');
-			}else{
-				this.classList.remove('is-invalid');
-			}				
+            if (inputValue !== "" && !testText(inputValue)) {
+                this.classList.add('is-invalid');
+            } else if(inputValue === "" || testText(inputValue)) {
+                this.classList.remove('is-invalid');
+            }				
 		});
 	});
 }
