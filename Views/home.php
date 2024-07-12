@@ -221,7 +221,7 @@
                 <p>
                     Sistema gestor de empresas de transporte municipal. Desarrollado con PHP orientado a objetos(POO),mvc, bootstrap, ajax, mysql. (En construcción)
                 </p>
-                <a href="https://softransweb.000webhostapp.com/" target="_blank">Ver más</a>
+                <!-- <a href="https://softransweb.000webhostapp.com/" target="_blank">Ver más</a> -->
             </div>
         </div>
         <div class="proyecto">
@@ -232,7 +232,7 @@
                 <p>
                     Sistema tienda en línea. Desarrollado con PHP orientado a objetos(POO),mvc, bootstrap, ajax, mysql.
                 </p>
-                <a href="https://onlinestorewebtest.000webhostapp.com/" target="_blank">Ver más</a>
+                <!-- <a href="https://onlinestorewebtest.000webhostapp.com/" target="_blank">Ver más</a> -->
             </div>
         </div>
         <div class="proyecto">
