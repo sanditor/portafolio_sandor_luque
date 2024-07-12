@@ -18,7 +18,7 @@
             bases de datos con competencias tales como productividad, seguimiento de instrucciones, trabajo en
             equipo y orientación al servicio.
         </p>
-        <a href="<?= media() ?>/portafolio/files/H.V. SANDOR LUQUE FARFAN.docx">Descargar CV</a>
+        <a href="<?= media() ?>/portafolio/files/H.V. SANDOR LUQUE FARFAN.pdf">Descargar CV</a>
     </div>
 </section>
 
