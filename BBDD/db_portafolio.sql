@@ -106,8 +106,7 @@ CREATE TABLE IF NOT EXISTS `persona` (
 -- Volcando datos para la tabla db_portafolio.persona: ~1 rows (aproximadamente)
 DELETE FROM `persona`;
 INSERT INTO `persona` (`idpersona`, `identificacion`, `nombres`, `apellidos`, `telefono`, `email_user`, `password`, `nit`, `nombrefiscal`, `direccionfiscal`, `token`, `rolid`, `datecreated`, `status`) VALUES
-	(1, '79988969', 'Sandor', 'Luque', 3124769266, 'admin@admin.com', 'MkJ1bHZXYmJRYTdXeGxWZHNodm1pdz09', 'CF', 'Sanditor', 'Bogota', '', 1, '2023-05-27 02:28:53', 1),
-	(4, '123456789', 'Pruebas', 'Sistema', 3124769266, 'pruebas@pruebas.com', 'MkJ1bHZXYmJRYTdXeGxWZHNodm1pdz09', NULL, NULL, NULL, NULL, 2, '2023-11-04 18:41:03', 1);
+	(1, '79988969', 'Sandor', 'Luque', 3124769266, 'admin@admin.com', 'MkJ1bHZXYmJRYTdXeGxWZHNodm1pdz09', 'CF', 'Sanditor', 'Bogota', '', 1, '2023-05-27 02:28:53', 1);
 
 -- Volcando estructura para tabla db_portafolio.rol
 CREATE TABLE IF NOT EXISTS `rol` (
