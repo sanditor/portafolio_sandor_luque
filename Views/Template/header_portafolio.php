@@ -61,28 +61,28 @@ $page_name = getLastSegmentFromURL($url);
                             <?php if (isset($_SESSION['login'])) { ?>
                                 <li id="welcome">Bienvenido:&nbsp;&nbsp;&nbsp;<?= $_SESSION['userData']['nombres'] . ' ' . $_SESSION['userData']['apellidos'] ?>&nbsp;&nbsp;&nbsp;</li>
                             <?php } ?>
-                            <li><a href="home#inicio"  onclick="seleccionar(this, 0)">INICIO</a></li>
-                            <li><a href="home#sobremi" onclick="seleccionar(this, 1)">SOBRE MI</a></li>
-                            <li><a href="home#servicios" onclick="seleccionar(this, 2)">SERVICIOS</a></li>
-                            <li><a href="home#portfolio" onclick="seleccionar(this, 3)">PORTAFOLIO</a></li>
-                            <li><a href="home#contacto" onclick="seleccionar(this, 4)">CONTACTO</a></li>
+                            <li><a href="<?= base_url() ?>/home#inicio"  onclick="seleccionar(this, 0)">INICIO</a></li>
+                            <li><a href="<?= base_url() ?>/home#sobremi" onclick="seleccionar(this, 1)">SOBRE MI</a></li>
+                            <li><a href="<?= base_url() ?>/home#servicios" onclick="seleccionar(this, 2)">SERVICIOS</a></li>
+                            <li><a href="<?= base_url() ?>/home#portfolio" onclick="seleccionar(this, 3)">PORTAFOLIO</a></li>
+                            <li><a href="<?= base_url() ?>/home#contacto" onclick="seleccionar(this, 4)">CONTACTO</a></li>
                             <li class="list__item">
                                 <a class="linkSoftrans" href="<?= base_url(); ?>/softransPage" onclick="seleccionar(this, 5)">SOFTRANS+</a>
                                 <ul class="list__show">
                                     <li>
-                                        <a href="softransPage#modules" class="nav__link nav__link--inside" onclick="seleccionar(this, 6)">Módulos</a>
+                                        <a href="<?= base_url() ?>/softransPage#modules" class="nav__link nav__link--inside" onclick="seleccionar(this, 6)">Módulos</a>
                                     </li>
 
                                     <li>
-                                        <a href="softransPage#whySoftrans" class="nav__link nav__link--inside" onclick="seleccionar(this, 7)">¿Por qué Escoger?</a>
+                                        <a href="<?= base_url() ?>/softransPage#whySoftrans" class="nav__link nav__link--inside" onclick="seleccionar(this, 7)">¿Por qué Escoger?</a>
                                     </li>
 
                                     <li>
-                                        <a href="softransPage#forWhom" class="nav__link nav__link--inside" onclick="seleccionar(this, 8)">¿Para quién es?</a>
+                                        <a href="<?= base_url() ?>/softransPage#forWhom" class="nav__link nav__link--inside" onclick="seleccionar(this, 8)">¿Para quién es?</a>
                                     </li>
 
                                     <li>
-                                        <a href="softransPage#questions" class="nav__link nav__link--inside" onclick="seleccionar(this, 9)">Preguntas Frecuentes</a>
+                                        <a href="<?= base_url() ?>/softransPage#questions" class="nav__link nav__link--inside" onclick="seleccionar(this, 9)">Preguntas Frecuentes</a>
                                     </li>
                                 </ul>
                             </li>
