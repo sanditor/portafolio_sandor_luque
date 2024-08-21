@@ -57,7 +57,7 @@ function sendEmail($data, $template)
     $de = "MIME-Version: 1.0\r\n";
     $de .= "Content-type: text/html; charset=UTF-8\r\n";
     $de .= "From: {$empresa} <{$remitente}>\r\n";
-    
+
     // Generación del contenido del correo
     ob_start();
     require_once("Views/Template/Email/" . $template . ".php");
@@ -68,6 +68,14 @@ function sendEmail($data, $template)
 
     // Envío del correo al segundo destinatario
     $send2 = mail($emailDestino2, $asunto, $mensaje, $de);
+
+    // Depuración
+    if (!$send1) {
+        error_log("Error al enviar el correo a: $emailDestino1");
+    }
+    if (!$send2) {
+        error_log("Error al enviar el correo a: $emailDestino2");
+    }
 
     // Retorna true si ambos correos se enviaron exitosamente, false en caso contrario
     return $send1 && $send2;

@@ -6,7 +6,7 @@
 			parent::__construct();
 		}
 
-		public function softransPage()
+		public function SoftransPage()
 		{
 			$data['page_id'] = 2;
 			$data['page_tag'] = NOMBRE_EMPRESA;
