@@ -1263,6 +1263,7 @@ footer a {
 
     .contenido-header .list__show {
         left: 50%;
+        height: auto;
     }
 
     #icono-nav {
