@@ -1,5 +1,5 @@
 <?php
-	session_start();
+	/* session_start(); */
 	class SoftransPage extends Controllers{
 		public function __construct()
 		{
