@@ -1,4 +1,4 @@
-<?php require_once("Template/header_portafolio.php") ?>
+<?php headerPortafolio($data); ?>
 <!-- SECCION S O B R E M I -->
 <section id="sobremi">
     <div class="contenedor-foto">
@@ -23,7 +23,7 @@
 </section>
 
 <!-- SECCION S E R V I C I O S -->
-<section id="servicios">
+<section id="servicios" class="servicios">
     <h3 class="titulo-seccion">MIS SERVICIOS</h3>
     <div class="fila">
         <div class="servicio">
@@ -309,7 +309,7 @@
     </div>
 </section>
 <div class="imagen-light">
-    <img src="<?= media() ?>/images/img/close.svg" alt="" class="close">
+    <img src="<?= media() ?>/portafolio/img/close.svg" alt="" class="close">
     <img src="" alt="" class="agregar-imagen">
 </div>
 
@@ -354,10 +354,10 @@
             <li><i class="fas fa-envelope-open-text"></i> contacto@sandorluqueweb.com</li>
         </ul>
         <p>No te preocupes cotiza que nosotros te lo programamos a nivel web y desarrollo a medida<br><br>
-          <b>portafolio.sandorluqueweb.com</b>
+            <b>portafolio.sandorluqueweb.com</b>
         </p>
-      
+
     </div>
 </section>
 
-<?php require_once("Template/footer_portafolio.php") ?>
+<?php footerPortafolio($data) ?>

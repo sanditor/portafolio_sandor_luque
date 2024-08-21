@@ -35,7 +35,8 @@
                     $arrResponse = array('status' => true, 'msg' => "Gracias por tu mensaje, ha sido enviado con éxito! Pronto te responderemos!!");
                     //Enviar correo
                     $dataUsuario = array('asunto' => "Nuevo Usuario en contacto",
-                                        'email' => EMAIL_CONTACTO,
+                                        'email1' => EMAIL_CONTACTO,
+                                        'email2' => EMAIL_CONTACTO2,
                                         'nombreContacto' => $nombre,
                                         'emailContacto' => $email,
                                         'temaContacto' => $tema,

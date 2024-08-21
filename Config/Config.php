@@ -35,6 +35,7 @@
 	const WHATSAPP = "+57  3124769266";
 	const EMAIL_EMPRESA = "contacto@sandorluqueweb.com";
 	const EMAIL_CONTACTO = "contacto@sandorluqueweb.com";
+	const EMAIL_CONTACTO2 = "sluque@misena.edu.co";
 
 	//Deliminadores decimal y millar Ej. 24,1989.00
 	const SPD = ".";

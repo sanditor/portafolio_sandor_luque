@@ -1,12 +1,43 @@
+// Obtener el índice del enlace activo y el id generado guardado en SessionStore
+var enlaceActivo = sessionStorage.getItem("enlaceActivo");
+var storedId = sessionStorage.getItem("myElementId");
+var enlaceSoftrans = document.querySelector('.linkSoftrans');
+
+if (enlaceActivo !== null) {
+    var enlaces = document.querySelectorAll('.links a');
+    var enlaceGuardado = enlaces[parseInt(enlaceActivo)];   
+    
+    if (enlaceGuardado || storedId) {
+        enlaceGuardado.setAttribute("id", storedId);
+        if (enlaceActivo == "6" || enlaceActivo == "7" || enlaceActivo == "8" || enlaceActivo == "9") {
+            enlaceSoftrans.classList.add("seleccionado");
+        }
+        enlaceGuardado.classList.add("seleccionado");
+
+    }
+}
+
+
 //Función que me aplica el estilo a la opciòn seleccionada y quita la previamente seleccionada
-function seleccionar(link) {
-    var opciones = document.querySelectorAll('#links  a');
-    opciones[0].className = "";
-    opciones[1].className = "";
-    opciones[2].className = "";
-    opciones[3].className = "";
-    opciones[4].className = "";
-    link.className = "seleccionado";
+function seleccionar(link, index) {
+    var opciones = document.querySelectorAll('.links li a');
+    let newId = "element_id_" + index.toString();
+    let enlaceSoftrans = document.querySelector('.linkSoftrans');
+
+    opciones.forEach(function (enlace) {
+        enlace.classList.remove("seleccionado");
+    }); 
+    
+    if (index == "6" || index == "7" || index == "8" || index == "9") {
+        enlaceSoftrans.classList.add("seleccionado");
+    }
+
+    link.classList.add("seleccionado");
+    
+    // Guardar los índices del enlace y el nuevo id activo en sessionStorage
+    sessionStorage.setItem("enlaceActivo", index.toString());
+    sessionStorage.setItem("myElementId", newId)
+
 
     //Hacemos desaparecer el menu una vez que se ha seleccionado una opcion
     //en modo responsive
@@ -30,16 +61,18 @@ window.onscroll = function() { efectoHabilidades() };
 //funcion que aplica la animación de la barra de habilidades
 function efectoHabilidades() {
     var skills = document.getElementById("skills");
-    var distancia_skills = window.innerHeight - skills.getBoundingClientRect().top;
-    if (distancia_skills >= 300) {
-        document.getElementById("html").classList.add("barra-progreso2");
-        document.getElementById("js").classList.add("barra-progreso3");
-        document.getElementById("bd").classList.add("barra-progreso4");
-        document.getElementById("php").classList.add("barra-progreso1");
-        document.getElementById("nodejs").classList.add("barra-progreso5");
-        document.getElementById("vuejs").classList.add("barra-progreso5");
-        document.getElementById("laravel").classList.add("barra-progreso4");
-        document.getElementById("api").classList.add("barra-progreso4");
+    if (skills) {
+        var distancia_skills = window.innerHeight - skills.getBoundingClientRect().top;
+        if (distancia_skills >= 300) {
+            document.getElementById("html").classList.add("barra-progreso2");
+            document.getElementById("js").classList.add("barra-progreso3");
+            document.getElementById("bd").classList.add("barra-progreso4");
+            document.getElementById("php").classList.add("barra-progreso1");
+            document.getElementById("nodejs").classList.add("barra-progreso5");
+            document.getElementById("vuejs").classList.add("barra-progreso5");
+            document.getElementById("laravel").classList.add("barra-progreso4");
+            document.getElementById("api").classList.add("barra-progreso4");
+        }        
     }
 
 }
@@ -47,35 +80,58 @@ function efectoHabilidades() {
 //lógica para el lightBOx del portafolio
 const imagenes = document.querySelectorAll('.img-galeria')
 const imagenLight = document.querySelector('.agregar-imagen');
-const contenedorLight = document.querySelector('.imagen-light')
-const closeLight = document.querySelector('.close')
-const hiddenMenuStyle = document.querySelector('.contenido header')
+const contenedorLight = document.querySelector('.imagen-light');
+const closeLight = document.querySelector('.close');
+const hiddenMenuStyle = document.querySelector('.contenido header');
 
-
-imagenes.forEach(imagen => {
-    imagen.addEventListener('click',()=>{
-        aparecerImagen(imagen.getAttribute('src'));
+if (contenedorLight) {
+    imagenes.forEach(imagen => {
+        imagen.addEventListener('click',()=>{
+            aparecerImagen(imagen.getAttribute('src'));
+        })
+    });
+    
+    contenedorLight.addEventListener('click',(e)=>{
+        if(e.target !== imagenLight){
+            contenedorLight.classList.toggle('show')
+            imagenLight.classList.toggle('showImage')       
+        }
     })
-});
-
-contenedorLight.addEventListener('click',(e)=>{
-    if(e.target !== imagenLight){
+    
+    closeLight.addEventListener('click', (e) => {
+         hiddenMenuStyle.style.zIndex = "100"
+    })
+    
+    
+    const aparecerImagen = (imagen)=>{
+        imagenLight.src = imagen;
         contenedorLight.classList.toggle('show')
-        imagenLight.classList.toggle('showImage')       
-    }
-})
-
-closeLight.addEventListener('click', (e) => {
-     hiddenMenuStyle.style.zIndex = "100"
-})
-
-
-const aparecerImagen = (imagen)=>{
-    imagenLight.src = imagen;
-    contenedorLight.classList.toggle('show')
-    imagenLight.classList.toggle('showImage')
-    hiddenMenuStyle.style.zIndex = "0" 
+        imagenLight.classList.toggle('showImage')
+        hiddenMenuStyle.style.zIndex = "0" 
+    }    
 }
+
+//Interaccion preguntas frecuentes
+(function(){
+    const titleQuestions = [...document.querySelectorAll('.questions__title')];
+   
+    titleQuestions.forEach(question =>{
+        question.addEventListener('click', ()=>{
+            let height = 0;
+            let answer = question.nextElementSibling;
+            let addPadding = question.parentElement.parentElement;
+
+            addPadding.classList.toggle('questions__padding--add');
+            question.children[0].classList.toggle('questions__arrow--rotate');
+
+            if(answer.clientHeight === 0){
+                height = answer.scrollHeight;
+            }
+
+            answer.style.height = `${height}px`;
+        });
+    });
+})();
 
 
 /* window.addEventListener('load', function() {

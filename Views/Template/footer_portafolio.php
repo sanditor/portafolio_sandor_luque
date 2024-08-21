@@ -1,6 +1,6 @@
 <!-- SECCION FOOTER -->
 <footer>
-    <p>Todos los derechos reservados - 2023</p>
+    <p>Todos los derechos reservados - 2024</p>
     <div class="redes">
         <a href="https://www.youtube.com/channel/UCCoEZ9s1qSGEK3_g_j5VsEg" target="_blank"><i class="fa-brands fa-youtube"></i></a>
         <a href="https://www.facebook.com/Sandor1978" target="_blank"><i class="fa-brands fa-facebook"></i></a>

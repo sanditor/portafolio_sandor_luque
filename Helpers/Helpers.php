@@ -20,6 +20,18 @@
         $view_footer = "Views/Template/footer_admin.php";
         require_once ($view_footer);        
     }
+    function headerPortafolio($data="")
+    {
+        $view_header = "Views/Template/header_portafolio.php";
+        require_once ($view_header);
+    }
+
+    function footerPortafolio($data="")
+    {
+        $view_header = "Views/Template/footer_portafolio.php";
+        require_once ($view_header);
+    }
+
 	//Muestra información formateada
 	function dep($data)
     {
@@ -37,7 +49,7 @@
     function sendEmail($data,$template)
     {
         $asunto = $data['asunto'];
-        $emailDestino = $data['email'];
+        $emailDestino = $data['email1'] . ', ' . $data['email2'];
         $empresa = NOMBRE_REMITENTE;
         $remitente = EMAIL_REMITENTE;
         //ENVIO DE CORREO
@@ -182,6 +194,15 @@
 
     return array("BASE_URL" => $BASE_URL, "PROTOCOL" => $protocol);
     
+    }
+
+    //Funcion para obtener el último segmento de la URL
+    function getLastSegmentFromURL($url) {
+        // Separar la URL en partes utilizando '/' como delimitador
+        $parts = explode('/', $url);
+    
+        // Obtener la última parte de la URL
+        return end($parts);
     }
     
 
