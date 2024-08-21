@@ -104,7 +104,7 @@ $page_name = getLastSegmentFromURL($url);
                     </nav>
 
                     <!-- Icono del menu responsive -->
-                    <div id=" icono-nav" onclick="responsiveMenu()">
+                    <div id="icono-nav" onclick="responsiveMenu()">
                                         <i class="fa-solid fa-bars"></i>
                 </div>
 
