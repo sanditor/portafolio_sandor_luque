@@ -33,7 +33,7 @@ function seleccionar(link, index) {
     }
 
     link.classList.add("seleccionado");
-    
+
     // Guardar los índices del enlace y el nuevo id activo en sessionStorage
     sessionStorage.setItem("enlaceActivo", index.toString());
     sessionStorage.setItem("myElementId", newId)
@@ -257,8 +257,10 @@ if(document.querySelector("#frmContacto")){
                 	document.querySelector("#frmContacto").reset();
                     document.getElementById("frmContacto").outerHTML = formularioOriginal;
                     document.querySelector("#txtNombreContacto").focus();
+                    divLoading.style.display = "none";
 	    		}else{
                     alertify.error(objData.msg);
+                    divLoading.style.display = "none";
 	    		}
 	    	}
 	    	divLoading.style.display = "none";

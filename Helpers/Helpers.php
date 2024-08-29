@@ -1,4 +1,9 @@
 <?php
+// Cargar el autoload de Composer
+require 'vendor/autoload.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 //Retorla la url del proyecto
 function base_url()
@@ -72,13 +77,62 @@ function sendEmail($data, $template)
     // Depuración
     if (!$send1) {
         error_log("Error al enviar el correo a: $emailDestino1");
+        $error = error_get_last();
+        error_log("Detalles del error Send1: " . print_r($error, true));
     }
     if (!$send2) {
         error_log("Error al enviar el correo a: $emailDestino2");
+        $error = error_get_last();
+        error_log("Detalles del error Send2: " . print_r($error, true));
     }
 
     // Retorna true si ambos correos se enviaron exitosamente, false en caso contrario
     return $send1 && $send2;
+}
+
+function sendMailer($data, $template)
+{
+    $asunto = $data['asunto'];
+    $emailDestino1 = $data['email1'];
+    $emailDestino2 = $data['email2'];
+    $empresa = NOMBRE_REMITENTE;
+    $remitente = EMAIL_REMITENTE;
+
+    // Crear una instancia de PHPMailer
+    $mail = new PHPMailer(true);
+
+    try {
+        // Activar depuración SMTP
+        //$mail->SMTPDebug = 3; // Mostrar todas las salidas de depuración
+
+        // Configuración del servidor SMTP
+        $mail->isSMTP();
+        $mail->Host       = 'smtp.hostinger.com'; // Configura el servidor SMTP
+        $mail->SMTPAuth   = true;               // Habilitar autenticación SMTP
+        $mail->Username   = 'contacto@sandorluqueweb.com'; // SMTP username
+        $mail->Password   = 'Elshalom7&';    // SMTP password
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // Habilitar encriptación TLS
+        $mail->Port       = 465;                // Puerto TCP para conexión
+
+        // Remitente y destinatarios
+        $mail->setFrom($remitente, $empresa);
+        $mail->addAddress($emailDestino1);
+        $mail->addAddress($emailDestino2);
+
+        // Contenido del correo
+        $mail->isHTML(true);
+        $mail->Subject = $asunto;
+        ob_start();
+        require_once("Views/Template/Email/" . $template . ".php");
+        $mensaje = ob_get_clean();
+        $mail->Body = $mensaje;
+
+        $mail->send();
+        return true;
+    } catch (Exception $e) {
+        error_log("Error al enviar correo: {$mail->ErrorInfo}");
+        return false;
+    }
 }
 
 function getPermisos(int $idmodulo)

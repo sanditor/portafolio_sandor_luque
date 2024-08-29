@@ -1081,7 +1081,7 @@ footer a {
     gap: 3em;
     overflow: hidden;
     margin: 0 auto;
-    padding: 30px;
+    /* padding: 30px; */
 }
 
 .forWhom__card {   
