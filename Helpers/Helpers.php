@@ -107,10 +107,10 @@ function sendMailer($data, $template)
 
         // Configuración del servidor SMTP
         $mail->isSMTP();
-        $mail->Host       = 'smtp.hostinger.com'; // Configura el servidor SMTP
+        $mail->Host       = HOSTSMTP; // Configura el servidor SMTP
         $mail->SMTPAuth   = true;               // Habilitar autenticación SMTP
-        $mail->Username   = 'contacto@sandorluqueweb.com'; // SMTP username
-        $mail->Password   = 'Elshalom7&';    // SMTP password
+        $mail->Username   = USERNAME; // SMTP username
+        $mail->Password   = PASSWORD;    // SMTP password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // Habilitar encriptación TLS
         $mail->Port       = 465;                // Puerto TCP para conexión
 

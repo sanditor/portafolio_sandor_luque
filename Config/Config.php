@@ -55,6 +55,11 @@
 	const SECRET_KEY = "sanditor@2016";
 	const SECRET_IV = "101712";	
 
+	// credenciales del servidor SMTP
+	const HOSTSMTP = "smtp.hostinger.com";
+	const USERNAME = "contacto@sandorluqueweb.com";
+	const PASSWORD = "Elshalom7";
+
 
 	
 
