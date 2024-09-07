@@ -59,9 +59,4 @@
 	const HOSTSMTP = "smtp.hostinger.com";
 	const USERNAME = "contacto@sandorluqueweb.com";
 	const PASSWORD = "Elshalom7";
-
-
-	
-
-
  ?>
