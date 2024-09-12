@@ -116,8 +116,7 @@ function sendMailer($data, $template)
 
         // Remitente y destinatarios
         $mail->setFrom($remitente, $empresa);
-        $mail->addAddress($emailDestino1);
-        $mail->addAddress($emailDestino2);
+        $mail->addAddress($emailDestino);
 
         // Contenido del correo
         $mail->isHTML(true);

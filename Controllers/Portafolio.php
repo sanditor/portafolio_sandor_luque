@@ -38,8 +38,7 @@ class Portafolio extends Controllers
                 //Enviar correo
                 $dataUsuario = array(
                     'asunto' => "Nuevo Usuario en contacto",
-                    'email1' => EMAIL_CONTACTO,
-                    'email2' => EMAIL_CONTACTO2,
+                    'email' => EMAIL_CONTACTO,
                     'nombreContacto' => $nombre,
                     'emailContacto' => $email,
                     'temaContacto' => $tema,

@@ -58,5 +58,5 @@
 	// credenciales del servidor SMTP
 	const HOSTSMTP = "smtp.hostinger.com";
 	const USERNAME = "contacto@sandorluqueweb.com";
-	const PASSWORD = "Elshalom7";
+	const PASSWORD = "Elshalom7&";
  ?>

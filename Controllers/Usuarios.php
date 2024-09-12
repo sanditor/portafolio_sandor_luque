@@ -86,7 +86,7 @@ class Usuarios extends Controllers
 								'newPassword' => decryption($strPassword)
 							);
 
-							$sendEmail = sendEmail($dataCliente, 'email_envioPassword');
+							$sendEmail = sendMailer($dataCliente, 'email_envioPassword');
 
 							if ($sendEmail) {
 								$arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente y se envío correo al usuario con contraseña para loguearse en el sistema..');
