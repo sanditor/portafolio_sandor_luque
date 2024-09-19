@@ -100,6 +100,7 @@ function sendMailer($data, $template)
 
     // Crear una instancia de PHPMailer
     $mail = new PHPMailer(true);
+    $mail->CharSet = 'UTF-8';
 
     try {
         // Activar depuración SMTP
@@ -107,6 +108,7 @@ function sendMailer($data, $template)
 
         // Configuración del servidor SMTP
         $mail->isSMTP();
+        $mail->SMTPKeepAlive = true;
         $mail->Host       = HOSTSMTP; // Configura el servidor SMTP
         $mail->SMTPAuth   = true;               // Habilitar autenticación SMTP
         $mail->Username   = USERNAME; // SMTP username
