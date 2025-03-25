@@ -100,6 +100,7 @@ function sendMailer($data, $template)
 
     // Crear una instancia de PHPMailer
     $mail = new PHPMailer(true);
+    $mail->CharSet = 'UTF-8';
 
     try {
         // Activar depuración SMTP
@@ -107,17 +108,17 @@ function sendMailer($data, $template)
 
         // Configuración del servidor SMTP
         $mail->isSMTP();
-        $mail->Host       = 'smtp.hostinger.com'; // Configura el servidor SMTP
+        $mail->SMTPKeepAlive = true;
+        $mail->Host       = HOSTSMTP; // Configura el servidor SMTP
         $mail->SMTPAuth   = true;               // Habilitar autenticación SMTP
-        $mail->Username   = 'contacto@sandorluqueweb.com'; // SMTP username
-        $mail->Password   = 'Elshalom7&';    // SMTP password
+        $mail->Username   = USERNAME; // SMTP username
+        $mail->Password   = PASSWORD;    // SMTP password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // Habilitar encriptación TLS
         $mail->Port       = 465;                // Puerto TCP para conexión
 
         // Remitente y destinatarios
         $mail->setFrom($remitente, $empresa);
-        $mail->addAddress($emailDestino1);
-        $mail->addAddress($emailDestino2);
+        $mail->addAddress($emailDestino);
 
         // Contenido del correo
         $mail->isHTML(true);
