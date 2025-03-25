@@ -219,7 +219,7 @@
             <div class="info">
                 <h3>Descripcion Proyecto</h3>
                 <p>
-                    Sistema gestor de empresas de transporte municipal. Desarrollado con PHP orientado a objetos(POO),mvc, bootstrap, ajax, mysql. (En construcción)
+                    Sistema gestor de empresas de transporte municipal y encomiendas. Desarrollado con PHP orientado a objetos(POO),mvc, bootstrap, ajax, mysql.
                 </p>
                 <a href="https://softrans.sandorluqueweb.com/" target="_blank">Ver más</a>
             </div>
