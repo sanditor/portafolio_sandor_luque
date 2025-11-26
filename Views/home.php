@@ -18,7 +18,7 @@
             bases de datos con competencias tales como productividad, seguimiento de instrucciones, trabajo en
             equipo y orientación al servicio.
         </p>
-        <a href="<?= media() ?>/portafolio/files/H.V. SANDOR LUQUE FARFAN.docx">Descargar CV</a>
+        <a href="<?= media() ?>/portafolio/files/H.V2. SANDOR LUQUE FARFAN.pdf">Descargar CV</a>
     </div>
 </section>
 
@@ -215,13 +215,24 @@
     <div class="fila">
         <div class="proyecto">
             <div class="overlay"></div>
+            <img class="img-galeria" src="<?= media() ?>/portafolio/img/proyecto10.jpg" alt="">
+            <div class="info">
+                <h3>Descripcion Proyecto</h3>
+                <p>
+                    Sistema Contador de Automotores en video. Desarrollado con PHP orientado a objetos(POO),mvc, bootstrap, JS puro, ajax, mysql, librerias de detencción: Tensorflow.
+                </p>
+                <!-- <a href="https://softrans.sandorluqueweb.com/" target="_blank">Ver más</a> -->
+            </div>
+        </div>
+        <div class="proyecto">
+            <div class="overlay"></div>
             <img class="img-galeria" src="<?= media() ?>/portafolio/img/proyecto1.jpg" alt="">
             <div class="info">
                 <h3>Descripcion Proyecto</h3>
                 <p>
                     Sistema gestor de empresas de transporte municipal y encomiendas. Desarrollado con PHP orientado a objetos(POO),mvc, bootstrap, ajax, mysql.
                 </p>
-                <a href="https://softrans.sandorluqueweb.com/" target="_blank">Ver más</a>
+                <!-- <a href="https://softrans.sandorluqueweb.com/" target="_blank">Ver más</a> -->
             </div>
         </div>
         <div class="proyecto">
@@ -232,7 +243,7 @@
                 <p>
                     Sistema tienda en línea. Desarrollado con PHP orientado a objetos(POO),mvc, bootstrap, ajax, mysql.
                 </p>
-                <a href="https://storeonline.sandorluqueweb.com/" target="_blank">Ver más</a>
+                <!-- <a href="https://storeonline.sandorluqueweb.com/" target="_blank">Ver más</a> -->
             </div>
         </div>
         <div class="proyecto">
@@ -243,7 +254,7 @@
                 <p>
                     Sistema facturador en línea. Desarrollado con PHP orientado a objetos(POO),mvc, bootstrap, ajax, mysql.
                 </p>
-                <a href="https://facturadorslf.sandorluqueweb.com/login" target="_blank">Ver más</a>
+                <!-- <a href="https://facturadorslf.sandorluqueweb.com/login" target="_blank">Ver más</a> -->
             </div>
         </div>
     </div>

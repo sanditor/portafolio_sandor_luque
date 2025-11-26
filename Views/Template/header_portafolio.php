@@ -121,12 +121,7 @@ $page_name = getLastSegmentFromURL($url);
                 <p class="bienvenida">Bienvenidos</p>
                 <h2>Soy <span>Sandor Luque Farfán</span>, Desarrollador Web</h2>
                 <p class="descripcion">
-                    Soy desarrollador fullStack, con experiencia en diferentes lenguajes de programación, me especializo
-                    principalmente en el desarrollo Full Stack, tengo experiencia realizando API RESTFULL.
-                    Me dedico a crear software a medida, tiendas en línea(MarketPlace), facturadores en línea, gestores de servicio de transporte
-                    intermunicipal, buscando siempre proyectos retadores e interesantes. Aparte de mi trabajo
-                    diario, dedico mi tiempo libre a estudiar nuevas tecnologías de la información, las más demandas.
-                    Soy bastante autodidacta.
+                    Apasionado Desarrollador PHP con más de 5 años de experiencia en el diseño y desarrollo de aplicaciones web full-stack. Tengo experiencia realizando API RESTFULL.  Me dedico a crear software a medida, tiendas en línea (MarketPlace), facturadores en línea, gestores de servicio de transporte                    intermunicipal, contadores de medios de transporte en video. Experto en tecnologías como PHP nativo, Laravel, HTML5, CSS3 y JavaScript. He liderado y mantenido aplicaciones eficientes para empresas y startups, combinando backend robusto con interfaces limpias y responsivas. Comprometido con soluciones escalables y de alto impacto. Estoy listo para aportar mis habilidades en desarrollo web y mi inclinación por la innovación para impulsar el éxito de su equipo. 
                 </p>
                 <a class="button_medium" href="home#portfolio">Ir a Portafolio</a>
             </div>

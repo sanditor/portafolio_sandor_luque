@@ -9,9 +9,9 @@
 #CREATE DATABASE IF NOT EXISTS `u378219037_db_portafolio` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 SET SESSION sql_mode = DEFAULT;
 
-DROP DATABASE IF EXISTS `db_portafolio`;
-CREATE DATABASE IF NOT EXISTS `db_portafolio`;
-USE `db_portafolio`;
+#DROP DATABASE IF EXISTS `if0_40498449_db_portafolio`;
+CREATE DATABASE IF NOT EXISTS `if0_40498449_db_portafolio`;
+USE `if0_40498449_db_portafolio`;
 
 -- Volcando estructura para tabla db_portafolio.contacto
 CREATE TABLE IF NOT EXISTS `contacto` (
